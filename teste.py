@@ -5,7 +5,7 @@ def main():
     st.title('Title')
     nome = st.text_input('Nome')
     idade = st.number_input('Idade',max_value=120)
-    data = st.date_input('Data', value=datetime.now(), min_value=datetime(1920, 12, 1))
+    data = st.date_input('Data', value=datetime.now(), min_value=datetime(1920, 12, 1)).strftime('%d/%m/%Y')
     dataf = data.strftime('%d/%m/%Y')
     status = st.selectbox('Status', ['S', 'N' ])
     hora_atual = st.time_input ('Hora')
@@ -23,6 +23,7 @@ def main():
         st.write(f'Data-Hora: {data_hora}')
         st.write(f'E-mail: {email}')
         
+
 
 
 
