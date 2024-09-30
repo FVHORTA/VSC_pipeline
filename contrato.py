@@ -1,6 +1,7 @@
 from datetime import datetime
-from typing import Tuple
-from pydantic import BaseModel, EmailStr, PositiveInt, Enum
+from enum import Enum
+
+from pydantic import BaseModel, EmailStr, PositiveInt
 
 from pydantic import BaseModel
 
@@ -9,10 +10,12 @@ class statusAI(str, Enum):
     inativo = 'Inativo'
 
 class cadastros(BaseModel):
-    nome: EmailStr   # pip install email-validator
+    nome: str
     idade: PositiveInt
-    data_nascimento: datetime
-    status: str
-    dttime: datetime
+    data: datetime
+    email: EmailStr   # pip install email-validator
+    status: statusAI
+    data_hora: datetime
+   
 
 
