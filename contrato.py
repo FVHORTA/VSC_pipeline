@@ -1,16 +1,18 @@
 from datetime import datetime
 from typing import Tuple
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, PositiveInt, Enum
 
 from pydantic import BaseModel
 
+class statusAI(str, Enum):
+    ativo = 'Ativo'
+    inativo = 'Inativo'
 
-class Delivery(BaseModel):
+class cadastros(BaseModel):
     nome: EmailStr   # pip install email-validator
-    idade: int
-    data: datetime
+    idade: PositiveInt
+    data_nascimento: datetime
     status: str
-    hora: datetime
-    data_hora: str
+    dttime: datetime
 
 
